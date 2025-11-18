@@ -31,7 +31,7 @@ productList.addEventListener("click", (e) => {
 		const cartProduct = products.find(product => product.id === Number(e.target.getAttribute("data-id")));
 		
 		cartProducts.push(cartProduct)
-		sessionStorage.setItem("addedToCart", JSON.stringify(cartProducts))
+		sessionStorage.setItem("cart", JSON.stringify(cartProducts))
 	
 		renderCart()
 	}
@@ -40,8 +40,8 @@ productList.addEventListener("click", (e) => {
 
 // Render cart list
 function renderCart() {
-	console.log(JSON.parse(sessionStorage.getItem("addedToCart")))
-	JSON.parse(sessionStorage.getItem("addedToCart")).forEach(product => {
+	// console.log(JSON.parse(sessionStorage.getItem("addedToCart")))
+	JSON.parse(sessionStorage.getItem("cart")).forEach(product => {
 		const li = document.createElement("li");
 		li.innerHTML = `${product.name} - $${product.price}`;
 		cartList.appendChild(li)
