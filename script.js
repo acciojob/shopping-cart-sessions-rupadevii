@@ -23,7 +23,7 @@ function renderProducts() {
   });
 }
 
-const cartProducts = []
+let cartProducts = []
 
 productList.addEventListener("click", (e) => {
 	if(e.target.matches("button")){
@@ -58,6 +58,7 @@ function removeFromCart(productId) {}
 // Clear cart
 function clearCart() {
 	sessionStorage.clear();
+	cartProducts = [];
 	cartList.innerHTML = ""
 }
 
