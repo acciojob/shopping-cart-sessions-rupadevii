@@ -37,21 +37,18 @@ productList.addEventListener("click", (e) => {
 	}
 })
 
-
 // Render cart list
 function renderCart() {
-	// console.log(JSON.parse(sessionStorage.getItem("addedToCart")))
-	JSON.parse(sessionStorage.getItem("cart")).forEach(product => {
-		const li = document.createElement("li");
-		li.innerHTML = `${product.name} - $${product.price}`;
-		cartList.appendChild(li)
-	})
+	if(sessionStorage.getItem("cart")){
+		JSON.parse(sessionStorage.getItem("cart")).forEach(product => {
+			const li = document.createElement("li");
+			li.innerHTML = `${product.name} - $${product.price}`;
+			cartList.appendChild(li)
+		})
+	}
 }
 
 clearCartBtn.addEventListener('click', clearCart)
-
-// Add item to cart
-function addToCart(productId) {}
 
 // Clear cart
 function clearCart() {
