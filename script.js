@@ -12,7 +12,7 @@ const products = [
 // DOM elements
 const productList = document.getElementById("product-list");
 const cartList = document.getElementById("cart-list");
-const clearCatBtn = document.getElementById("clear-cart-btn");
+const clearCartBtn = document.getElementById("clear-cart-btn");
 
 // Render product list
 function renderProducts() {
@@ -48,12 +48,10 @@ function renderCart() {
 	})
 }
 
-clearCatBtn.addEventListener('click', clearCart)
+clearCartBtn.addEventListener('click', clearCart)
+
 // Add item to cart
 function addToCart(productId) {}
-
-// Remove item from cart
-function removeFromCart(productId) {}
 
 // Clear cart
 function clearCart() {
@@ -64,4 +62,4 @@ function clearCart() {
 
 // Initial render
 renderProducts();
-// renderCart();
+renderCart();
